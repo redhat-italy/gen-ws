@@ -1,4 +1,4 @@
-package org.wildfly.camel.examples.cxf;
+package org.wildfly.camel.examples.cxf.second;
 
 /**
  * Created by samuele on 5/7/15.

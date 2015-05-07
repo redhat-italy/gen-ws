@@ -17,25 +17,14 @@
  * limitations under the License.
  * #L%
  */
-package org.wildfly.camel.examples.cxf;
+package org.wildfly.camel.examples.cxf.greetings;
 
 import javax.jws.WebMethod;
 import javax.jws.WebParam;
 import javax.jws.WebService;
-import java.text.ParseException;
-import java.text.SimpleDateFormat;
 
-@WebService(serviceName="second", endpointInterface = "org.wildfly.camel.examples.cxf.SecondService")
-public class SecondServiceImpl {
-
-    @WebMethod(operationName = "greet")
-    public Agency second(@WebParam(name = "message") String message, @WebParam(name = "name") String name) {
-        Agency agency = new Agency();
-
-        agency.setAgencyId("1111-111-33333");
-        agency.setLocation("Mogliano Veneto");
-        agency.setPrincipal("Pippo Pluto");
-
-        return agency;
-    }
+@WebService(name = "greeting")
+public interface GreetingService {
+    @WebMethod(operationName = "greet", action = "urn:greet")
+    Subject greet(@WebParam(name = "message") String message, @WebParam(name = "name") String name);
 }

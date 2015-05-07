@@ -17,18 +17,15 @@
  * limitations under the License.
  * #L%
  */
-package org.wildfly.camel.examples.cxf;
-
-import org.apache.camel.model.dataformat.StringDataFormat;
+package org.wildfly.camel.examples.cxf.greetings;
 
 import javax.jws.WebMethod;
 import javax.jws.WebParam;
 import javax.jws.WebService;
 import java.text.ParseException;
 import java.text.SimpleDateFormat;
-import java.util.Date;
 
-@WebService(serviceName="greeting", endpointInterface = "org.wildfly.camel.examples.cxf.GreetingService")
+@WebService(serviceName="greeting", endpointInterface = "org.wildfly.camel.examples.cxf.greetings.GreetingService")
 public class GreetingServiceImpl {
 
     @WebMethod(operationName = "greet")

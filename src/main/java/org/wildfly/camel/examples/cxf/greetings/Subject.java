@@ -1,4 +1,4 @@
-package org.wildfly.camel.examples.cxf;
+package org.wildfly.camel.examples.cxf.greetings;
 
 import java.util.Date;
 

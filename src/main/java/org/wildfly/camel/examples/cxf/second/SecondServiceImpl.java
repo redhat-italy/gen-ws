@@ -17,14 +17,23 @@
  * limitations under the License.
  * #L%
  */
-package org.wildfly.camel.examples.cxf;
+package org.wildfly.camel.examples.cxf.second;
 
 import javax.jws.WebMethod;
 import javax.jws.WebParam;
 import javax.jws.WebService;
 
-@WebService(name = "second")
-public interface SecondService {
-    @WebMethod(operationName = "second", action = "urn:second")
-    Agency second(@WebParam(name = "message") String message, @WebParam(name = "name") String name);
+@WebService(serviceName="second", endpointInterface = "org.wildfly.camel.examples.cxf.second.SecondService")
+public class SecondServiceImpl {
+
+    @WebMethod(operationName = "second")
+    public Agency second(@WebParam(name = "message") String message, @WebParam(name = "name") String name) {
+        Agency agency = new Agency();
+
+        agency.setAgencyId("1111-111-33333");
+        agency.setLocation("Mogliano Veneto");
+        agency.setPrincipal("Pippo Pluto");
+
+        return agency;
+    }
 }
